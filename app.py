@@ -11,7 +11,7 @@ app = Flask(__name__)
 model = tf.keras.models.load_model('model/multimodal_model.h5')
 
 # Dummy tokenizer – replace with your actual tokenizer (e.g., using Keras Tokenizer or a transformer)
-def tokenize_text(text, max_length=100):
+def tokenize_text(text, max_length=10000):
     # For demonstration: convert each character to an int mod vocab size (placeholder)
     tokens = [ord(c) % 5000 for c in text][:max_length]
     tokens = pad_sequences([tokens], maxlen=max_length)
